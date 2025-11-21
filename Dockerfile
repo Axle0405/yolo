@@ -12,7 +12,6 @@ RUN git clone https://github.com/pjreddie/darknet.git
 
 WORKDIR /opt/darknet
 
-# Makefile 직접 수정 (GPU/CUDNN 비활성, OPENCV 활성)
 RUN sed -i 's/^GPU=.*/GPU=0/' Makefile && \
     sed -i 's/^CUDNN=.*/CUDNN=0/' Makefile && \
     sed -i 's/^OPENCV=.*/OPENCV=0/' Makefile && \
